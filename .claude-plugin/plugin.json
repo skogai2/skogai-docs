@@ -1,0 +1,8 @@
+{
+  "name": "code-docs-lookup",
+  "version": "0.1.0",
+  "description": "Search, question and research the official Claude Code documentation from a local, offline-searchable copy.",
+  "author": {
+    "name": "Emil Skogsund"
+  }
+}
