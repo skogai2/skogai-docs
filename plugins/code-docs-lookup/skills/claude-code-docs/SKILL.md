@@ -1,6 +1,6 @@
 ---
 name: claude-code-docs
-allowed-tools: Bash(${CLAUDE_PLUGIN_ROOT}/scripts/sync-docs.sh *) Bash(${CLAUDE_PLUGIN_ROOT}/scripts/search-docs.sh *) Bash(${CLAUDE_PLUGIN_ROOT}/scripts/show-doc.sh *)
+allowed-tools: Bash(${CLAUDE_PLUGIN_ROOT}/scripts/sync-docs.sh *) Bash(${CLAUDE_PLUGIN_ROOT}/scripts/search-docs.sh *) Bash(${CLAUDE_PLUGIN_ROOT}/scripts/show-doc.sh *) Read(${CLAUDE_PLUGIN_ROOT}/skills/claude-code-docs/references/*)
 description: Answer questions about Claude Code (the CLI, its settings, hooks, skills, plugins, MCP servers, slash commands, subagents, permissions, IDE and desktop integrations, the Agent SDK) by searching the official Claude Code documentation, not from memory. Use when the user asks how a Claude Code feature works, what a setting or flag does, asks to look something up in the docs, or wants research across the docs.
 ---
 
@@ -15,6 +15,13 @@ Use only the three scripts in `${CLAUDE_PLUGIN_ROOT}/scripts/` to reach them. Al
 the scripts can't see the variable themselves.
 Don't read the cache files directly or with ad-hoc grep pipelines: those need
 extra permission prompts, and the scripts already do the job.
+
+## References
+
+- `${CLAUDE_PLUGIN_ROOT}/skills/claude-code-docs/references/env-vars.md`: every Claude Code
+  environment variable (378), grouped by prefix, with what each one does and the
+  on/off rules. For questions about an env var, read this first. Check the docs
+  with the scripts below if you need more detail or the file doesn't have the variable.
 
 ## Workflow
 
