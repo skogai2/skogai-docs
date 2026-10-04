@@ -2,7 +2,7 @@
 
 Reference for every environment variable in the Claude Code docs, grouped by name prefix.
 
-Source: https://code.claude.com/docs/en/env-vars (Variables table). Snapshot of the docs as synced on 2026-10-04; re-check the source page if a variable is missing or its behaviour looks different.
+Source: https://code.claude.com/docs/en/env-vars (Variables table). Re-check the source page if a variable is missing or behaves differently.
 
 ## Conventions
 

@@ -2,6 +2,7 @@
 set -euo pipefail
 
 # Usage: show-doc.sh [-c cache_dir] [-H] <slug>
+# Output ends with a "source:" line holding the page's docs URL.
 # Prints one cached Claude Code doc page, e.g. `show-doc.sh hooks`, or with
 # -H only its headings, to pick the sections worth reading. Slugs come from
 # search-docs.sh output or the first column of index.txt.
@@ -41,3 +42,6 @@ if [[ $headings_only -eq 1 ]]; then
 else
     cat "$file"
 fi
+# Footer so the source URL is in the output, for citing the page.
+echo
+echo "source: https://code.claude.com/docs/en/$slug"
