@@ -1,0 +1,14 @@
+{
+  "name": "code-docs-tools",
+  "description": "Tools for working with Claude Code, including offline search of its official docs.",
+  "owner": {
+    "name": "Emil Skogsund"
+  },
+  "plugins": [
+    {
+      "name": "code-docs-lookup",
+      "source": "./plugins/code-docs-lookup",
+      "description": "Search, question and research the official Claude Code docs from a local, offline-searchable copy."
+    }
+  ]
+}
