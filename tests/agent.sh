@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Stage 06: a real `claude -p` run uses the docs scripts and cites only pages it read.
 # This calls the API and costs money (capped by --max-budget-usd in run-case.sh).
-source "$(dirname "$0")/../lib.sh"
-echo "stage 06: agent run"
+source "$(dirname "$0")/lib.sh"
+echo "agent: docs requirements"
 
 prompt="${PROMPT:-which env var disable telemetry in claude code}"
 run=$("$REPO/tests/run-case.sh" stage06 "$prompt" | sed -n 's/^run: //p')

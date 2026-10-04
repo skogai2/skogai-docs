@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
-# Runs every stage in order. Stops at the first failing stage.
+# Runs the offline checks, then the isolated-environment check.
+# The agent check (agent.sh) calls the API, so it is run on its own.
 set -euo pipefail
 export TEST_TMP="$(mktemp -d)"
-for stage in "$(dirname "$0")"/stages/*.sh; do
-    if ! bash "$stage"; then
-        echo "stopped at $(basename "$stage"); later stages not run" >&2
-        exit 1
-    fi
-done
-echo "all stages passed"
+DIR="$(dirname "$0")"
+bash "$DIR/offline.sh"
+bash "$DIR/environment.sh"
+echo "all checks passed"

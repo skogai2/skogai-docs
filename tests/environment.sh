@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Stage 00: a run really is isolated. Each claim is read from the run's own events.
-source "$(dirname "$0")/../lib.sh"
-echo "stage 00: isolated environment"
+source "$(dirname "$0")/lib.sh"
+echo "environment: isolated run"
 
 run_out=$(EXTRA_ALLOWED='Bash(printenv CLAUDE_CONFIG_DIR)' "$REPO/tests/run-case.sh" stage00 \
     "Run exactly this shell command and nothing else: printenv CLAUDE_CONFIG_DIR")
